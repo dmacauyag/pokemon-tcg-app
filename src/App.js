@@ -1,22 +1,30 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+
+import { pokemonTcgAPI } from './services/api/pokemon-tcg';
+
 import './App.css';
 
 const App = () => {
+  const [sets, setSets] = useState([]);
+
+  useEffect(async () => {
+    const allSets = await pokemonTcgAPI.getAllSets({
+      orderBy: 'releaseDate',
+    });
+    console.log(allSets);
+    setSets(allSets);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {sets && sets.length && (
+          <ul>
+            {sets.map((set) => (
+              <li key={set.id}>{set.name}</li>
+            ))}
+          </ul>
+        )}
       </header>
     </div>
   );
