@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import PokemonTcgApiContext from './services/context/PokemonTcgApiContext';
-import { PokemonTcgAPI } from './services/api/pokemon-tcg';
+import PokemonTcgApiContext from './core/context/PokemonTcgApiContext';
+import { PokemonTcgAPI } from './core/api/pokemon-tcg';
 
 import { Main } from './components/Main';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 
-import PokemonTcgApiContext from '../../services/context/PokemonTcgApiContext';
+import PokemonTcgApiContext from '../../core/context/PokemonTcgApiContext';
 
 import { Set } from '../Set';
 
