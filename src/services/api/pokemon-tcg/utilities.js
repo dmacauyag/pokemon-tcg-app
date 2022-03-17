@@ -7,9 +7,5 @@ const normalizedSet = (set) => ({
   series: set.series || '',
 });
 
-const handleAllSetsResponse = (sets) =>
+export const handleAllSetsResponse = (sets) =>
   sets.map((set) => normalizedSet(set));
-
-export default {
-  handleAllSetsResponse,
-};

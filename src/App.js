@@ -1,17 +1,21 @@
-import { Router } from './components/Router';
+import { useEffect } from 'react';
+
+import PokemonTcgApiContext from './services/context/PokemonTcgApiContext';
+import { PokemonTcgAPI } from './services/api/pokemon-tcg';
+
+import { Main } from './components/Main';
 
 import './App.css';
 
 const App = () => {
+  useEffect(() => {
+    PokemonTcgAPI.init();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Pokemon TCG App</h1>
-      </header>
-      <main>
-        <Router />
-      </main>
-    </div>
+    <PokemonTcgApiContext.Provider value={PokemonTcgAPI}>
+      <Main />
+    </PokemonTcgApiContext.Provider>
   );
 };
 

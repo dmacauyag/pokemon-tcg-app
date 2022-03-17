@@ -1,1 +1,1 @@
-export { default as pokemonTcgAPI } from './pokemon-tcg';
+export { default as PokemonTcgAPI } from './PokemonTcgApi';

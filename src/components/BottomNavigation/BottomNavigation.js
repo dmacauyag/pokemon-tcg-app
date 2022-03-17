@@ -12,7 +12,6 @@ const BottomNav = () => {
   const [value, setValue] = useState(0);
 
   const handleOnChange = (event, newValue) => {
-    console.log(event);
     setValue(newValue);
   };
 

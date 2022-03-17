@@ -1,22 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
-import { pokemonTcgAPI } from '../../services/api/pokemon-tcg';
+import PokemonTcgApiContext from '../../services/context/PokemonTcgApiContext';
 
 import { Set } from '../Set';
 
 const Sets = () => {
   const [sets, setSets] = useState([]);
+  const pokemonTcgApi = useContext(PokemonTcgApiContext);
 
   useEffect(() => {
     const fetchSets = async () => {
-      const allSets = await pokemonTcgAPI.getAllSets({
+      const allSets = await pokemonTcgApi.getAllSets({
         orderBy: 'releaseDate',
       });
       setSets(allSets);
     };
 
     fetchSets();
-  }, []);
+  }, [pokemonTcgApi]);
 
   return (
     <>
