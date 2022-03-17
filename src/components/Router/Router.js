@@ -5,14 +5,14 @@ import { SetsPage } from '../../pages/SetsPage';
 
 import { BottomNavigation } from '../BottomNavigation';
 
-export default function Router() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/sets" element={<SetsPage />} />
-      </Routes>
-      <BottomNavigation />
-    </BrowserRouter>
-  );
-}
+const Router = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/sets" element={<SetsPage />} />
+    </Routes>
+    <BottomNavigation />
+  </BrowserRouter>
+);
+
+export default Router;

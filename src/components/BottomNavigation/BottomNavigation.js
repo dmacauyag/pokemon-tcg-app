@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationMui from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-const BottomNav = () => {
+const BottomNavigation = () => {
   const [value, setValue] = useState(0);
 
   const handleOnChange = (event, newValue) => {
@@ -21,7 +21,7 @@ const BottomNav = () => {
         sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
         elevation={3}
       >
-        <BottomNavigation
+        <BottomNavigationMui
           showLabels
           value={value}
           onChange={handleOnChange}
@@ -38,10 +38,10 @@ const BottomNav = () => {
             label="Sets"
             icon={<FavoriteIcon />}
           />
-        </BottomNavigation>
+        </BottomNavigationMui>
       </Paper>
     </Box>
   );
 };
 
-export default BottomNav;
+export default BottomNavigation;
